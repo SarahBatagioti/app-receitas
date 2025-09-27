@@ -1,0 +1,12 @@
+# Node.js
+node_modules/
+package-lock.json
+yarn.lock
+
+# React
+build/
+coverage/
+dist/
+
+# Environment variables
+.env
