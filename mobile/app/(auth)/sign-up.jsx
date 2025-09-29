@@ -42,7 +42,7 @@ const SignUpScreen = () => {
 
       setPendingVerification(true);
     } catch (err) {
-      Alert.alert("Error", err.errors?.[0]?.message || "Failed to create account");
+      Alert.alert("Error", err.errors?.[0]?.message || "Falha a criar senha");
       console.error(JSON.stringify(err, null, 2));
     } finally {
       setLoading(false);

@@ -28,11 +28,11 @@ const VerifyEmail = ({ email, onBack }) => {
       if (signUpAttempt.status === "complete") {
         await setActive({ session: signUpAttempt.createdSessionId });
       } else {
-        Alert.alert("Error", "Verification failed. Please try again.");
+        Alert.alert("Error", "Verificação falhou, por favor tente novamente");
         console.error(JSON.stringify(signUpAttempt, null, 2));
       }
     } catch (err) {
-      Alert.alert("Error", err.errors?.[0]?.message || "Verification failed");
+      Alert.alert("Error", err.errors?.[0]?.message || "Verificação falohu");
       console.error(JSON.stringify(err, null, 2));
     } finally {
       setLoading(false);
@@ -53,22 +53,22 @@ const VerifyEmail = ({ email, onBack }) => {
           {/* Image Container */}
           <View style={authStyles.imageContainer}>
             <Image
-              source={require("../../assets/images/i3.png")}
+              source={require("../../assets/images/i1.png")}
               style={authStyles.image}
               contentFit="contain"
             />
           </View>
 
           {/* Title */}
-          <Text style={authStyles.title}>Verify Your Email</Text>
-          <Text style={authStyles.subtitle}>We&apos;ve sent a verification code to {email}</Text>
+          <Text style={authStyles.title}>Verifique seu e-mail</Text>
+          <Text style={authStyles.subtitle}>Enviamos um código de verificação para {email}</Text>
 
           <View style={authStyles.formContainer}>
             {/* Verification Code Input */}
             <View style={authStyles.inputContainer}>
               <TextInput
                 style={authStyles.textInput}
-                placeholder="Enter verification code"
+                placeholder="Código de verificação"
                 placeholderTextColor={COLORS.textLight}
                 value={code}
                 onChangeText={setCode}
@@ -84,7 +84,7 @@ const VerifyEmail = ({ email, onBack }) => {
               disabled={loading}
               activeOpacity={0.8}
             >
-              <Text style={authStyles.buttonText}>{loading ? "Verifying..." : "Verify Email"}</Text>
+              <Text style={authStyles.buttonText}>{loading ? "Verificando..." : "Vericar e-mail"}</Text>
             </TouchableOpacity>
 
             {/* Back to Sign Up */}

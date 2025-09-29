@@ -76,7 +76,7 @@ const SearchScreen = () => {
     handleSearch();
   }, [debouncedSearchQuery, initialLoading]);
 
-  if (initialLoading) return <LoadingSpinner message="Loading recipes..." />;
+  if (initialLoading) return <LoadingSpinner message="Carregando receitas..." />;
 
   return (
     <View style={searchStyles.container}>
@@ -138,7 +138,7 @@ function NoResultsFound() {
   return (
     <View style={searchStyles.emptyState}>
       <Ionicons name="search-outline" size={64} color={COLORS.textLight} />
-      <Text style={searchStyles.emptyTitle}>No recipes found</Text>
+      <Text style={searchStyles.emptyTitle}>Receita não encontrada</Text>
       <Text style={searchStyles.emptyDescription}>
         Try adjusting your search or try different keywords
       </Text>

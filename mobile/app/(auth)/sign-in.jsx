@@ -47,11 +47,11 @@ const SignInScreen = () => {
       if (signInAttempt.status === "complete") {
         await setActive({ session: signInAttempt.createdSessionId });
       } else {
-        Alert.alert("Error", "Sign in failed. Please try again.");
+        Alert.alert("Error", "Login falhou, por favor tente novamente");
         console.error(JSON.stringify(signInAttempt, null, 2));
       }
     } catch (err) {
-      Alert.alert("Error", err.errors?.[0]?.message || "Sign in failed");
+      Alert.alert("Error", err.errors?.[0]?.message || "Login falhou");
       console.error(JSON.stringify(err, null, 2));
     } finally {
       setLoading(false);

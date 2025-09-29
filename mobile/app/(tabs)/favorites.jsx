@@ -19,7 +19,7 @@ const FavoritesScreen = () => {
     const loadFavorites = async () => {
       try {
         const response = await fetch(`${API_URL}/favorites/${user.id}`);
-        if (!response.ok) throw new Error("Failed to fetch favorites");
+        if (!response.ok) throw new Error("Falha ao buscar favoritos");
 
         const favorites = await response.json();
 
@@ -31,7 +31,7 @@ const FavoritesScreen = () => {
 
         setFavoriteRecipes(transformedFavorites);
       } catch (error) {
-        console.log("Error loading favorites", error);
+        console.log("Falha ao carregar favoritos", error);
         Alert.alert("Erro", "Falha ao carregar favoritos");
       } finally {
         setLoading(false);
@@ -42,9 +42,9 @@ const FavoritesScreen = () => {
   }, [user.id]);
 
   const handleSignOut = () => {
-    Alert.alert("Logout", "Are you sure you want to logout?", [
-      { text: "Cancel", style: "cancel" },
-      { text: "Logout", style: "destructive", onPress: signOut },
+    Alert.alert("Sair", "Tem certeza que quer sair?", [
+      { text: "Cancelar", style: "cancel" },
+      { text: "Sair", style: "destructive", onPress: signOut },
     ]);
   };
 

@@ -51,7 +51,7 @@ const HomeScreen = () => {
       const transformedFeatured = MealAPI.transformMealData(featuredMeal);
       setFeaturedRecipe(transformedFeatured);
     } catch (error) {
-      console.log("Error loading the data", error);
+      console.log("Erro ao carregar dado", error);
     } finally {
       setLoading(false);
     }
@@ -65,7 +65,7 @@ const HomeScreen = () => {
         .filter((meal) => meal !== null);
       setRecipes(transformedMeals);
     } catch (error) {
-      console.error("Error loading category data:", error);
+      console.error("Erro a carregar dado da categoria:", error);
       setRecipes([]);
     }
   };
@@ -104,27 +104,15 @@ const HomeScreen = () => {
         {/*  ANIMAL ICONS */}
         <View style={homeStyles.welcomeSection}>
           <Image
-            source={require("../../assets/images/lamb.png")}
+            source={require("../../assets/images/i1.png")}
             style={{
               width: 100,
               height: 100,
             }}
-          />
-          <Image
-            source={require("../../assets/images/chicken.png")}
-            style={{
-              width: 100,
-              height: 100,
-            }}
-          />
-          <Image
-            source={require("../../assets/images/pork.png")}
-            style={{
-              width: 100,
-              height: 100,
-            }}
+            resizeMode="contain" // Adiciona o resizeMode para não cortar a imagem
           />
         </View>
+
 
         {/* FEATURED SECTION */}
         {featuredRecipe && (
@@ -196,7 +184,7 @@ const HomeScreen = () => {
               columnWrapperStyle={homeStyles.row}
               contentContainerStyle={homeStyles.recipesGrid}
               scrollEnabled={false}
-              // ListEmptyComponent={}
+            // ListEmptyComponent={}
             />
           ) : (
             <View style={homeStyles.emptyState}>
