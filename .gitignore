@@ -10,3 +10,9 @@ dist/
 
 # Environment variables
 .env
+
+# Drizzle Migrations (pasta de migrações geradas)
+migrations/
+
+#Copilot Github
+copilot-instructions.md
