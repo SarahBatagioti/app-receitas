@@ -35,7 +35,7 @@ const HomeScreen = () => {
         id: index + 1,
         name: cat.strCategory,
         image: cat.strCategoryThumb,
-        description: cat.strCategoryDescription,
+        description: cat.strCategoryDescription, // descrição da categoria
       }));
 
       setCategories(transformedCategories);
@@ -86,7 +86,7 @@ const HomeScreen = () => {
     loadData();
   }, []);
 
-  if (loading && !refreshing) return <LoadingSpinner message="Loading delicions recipes..." />;
+  if (loading && !refreshing) return <LoadingSpinner message="Carregando receitas deliciosas..." />;
 
   return (
     <View style={homeStyles.container}>
@@ -143,7 +143,7 @@ const HomeScreen = () => {
                 />
                 <View style={homeStyles.featuredOverlay}>
                   <View style={homeStyles.featuredBadge}>
-                    <Text style={homeStyles.featuredBadgeText}>Featured</Text>
+                    <Text style={homeStyles.featuredBadgeText}>Destaque</Text>
                   </View>
 
                   <View style={homeStyles.featuredContent}>
@@ -201,8 +201,8 @@ const HomeScreen = () => {
           ) : (
             <View style={homeStyles.emptyState}>
               <Ionicons name="restaurant-outline" size={64} color={COLORS.textLight} />
-              <Text style={homeStyles.emptyTitle}>No recipes found</Text>
-              <Text style={homeStyles.emptyDescription}>Try a different category</Text>
+              <Text style={homeStyles.emptyTitle}>Nenhuma receita encontrada</Text>
+              <Text style={homeStyles.emptyDescription}>Tente uma categoria diferente</Text>
             </View>
           )}
         </View>

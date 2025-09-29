@@ -32,7 +32,7 @@ const FavoritesScreen = () => {
         setFavoriteRecipes(transformedFavorites);
       } catch (error) {
         console.log("Error loading favorites", error);
-        Alert.alert("Error", "Failed to load favorites");
+        Alert.alert("Erro", "Falha ao carregar favoritos");
       } finally {
         setLoading(false);
       }
@@ -48,13 +48,13 @@ const FavoritesScreen = () => {
     ]);
   };
 
-  if (loading) return <LoadingSpinner message="Loading your favorites..." />;
+  if (loading) return <LoadingSpinner message="Carregando seus favoritos..." />;
 
   return (
     <View style={favoritesStyles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={favoritesStyles.header}>
-          <Text style={favoritesStyles.title}>Favorites</Text>
+          <Text style={favoritesStyles.title}>Favoritos</Text>
           <TouchableOpacity style={favoritesStyles.logoutButton} onPress={handleSignOut}>
             <Ionicons name="log-out-outline" size={22} color={COLORS.text} />
           </TouchableOpacity>

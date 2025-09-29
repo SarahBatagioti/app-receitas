@@ -28,8 +28,8 @@ const SignUpScreen = () => {
   const [pendingVerification, setPendingVerification] = useState(false);
 
   const handleSignUp = async () => {
-    if (!email || !password) return Alert.alert("Error", "Please fill in all fields");
-    if (password.length < 6) return Alert.alert("Error", "Password must be at least 6 characters");
+    if (!email || !password) return Alert.alert("Erro", "Por favor, preencha todos os campos");
+    if (password.length < 6) return Alert.alert("Erro", "A senha deve ter pelo menos 6 caracteres");
 
     if (!isLoaded) return;
 
@@ -72,14 +72,14 @@ const SignUpScreen = () => {
             />
           </View>
 
-          <Text style={authStyles.title}>Create Account</Text>
+          <Text style={authStyles.title}>Criar Conta</Text>
 
           <View style={authStyles.formContainer}>
             {/* Email Input */}
             <View style={authStyles.inputContainer}>
               <TextInput
                 style={authStyles.textInput}
-                placeholder="Enter email"
+                placeholder="Digite seu e-mail"
                 placeholderTextColor={COLORS.textLight}
                 value={email}
                 onChangeText={setEmail}
@@ -92,7 +92,7 @@ const SignUpScreen = () => {
             <View style={authStyles.inputContainer}>
               <TextInput
                 style={authStyles.textInput}
-                placeholder="Enter password"
+                placeholder="Digite sua senha"
                 placeholderTextColor={COLORS.textLight}
                 value={password}
                 onChangeText={setPassword}
@@ -119,14 +119,14 @@ const SignUpScreen = () => {
               activeOpacity={0.8}
             >
               <Text style={authStyles.buttonText}>
-                {loading ? "Creating Account..." : "Sign Up"}
+                {loading ? "Criando Conta..." : "Cadastrar"}
               </Text>
             </TouchableOpacity>
 
             {/* Sign In Link */}
             <TouchableOpacity style={authStyles.linkContainer} onPress={() => router.back()}>
               <Text style={authStyles.linkText}>
-                Already have an account? <Text style={authStyles.link}>Sign In</Text>
+                Já tem uma conta? <Text style={authStyles.link}>Entrar</Text>
               </Text>
             </TouchableOpacity>
           </View>

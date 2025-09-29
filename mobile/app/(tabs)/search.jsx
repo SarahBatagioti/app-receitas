@@ -17,7 +17,7 @@ const SearchScreen = () => {
   const debouncedSearchQuery = useDebounce(searchQuery, 300);
 
   const performSearch = async (query) => {
-    // if no search query
+    // se não houver consulta de pesquisa
     if (!query.trim()) {
       const randomMeals = await MealAPI.getRandomMeals(12);
       return randomMeals
@@ -90,7 +90,7 @@ const SearchScreen = () => {
           />
           <TextInput
             style={searchStyles.searchInput}
-            placeholder="Search recipes, ingredients..."
+            placeholder="Buscar receitas, ingredientes..."
             placeholderTextColor={COLORS.textLight}
             value={searchQuery}
             onChangeText={setSearchQuery}
@@ -107,14 +107,14 @@ const SearchScreen = () => {
       <View style={searchStyles.resultsSection}>
         <View style={searchStyles.resultsHeader}>
           <Text style={searchStyles.resultsTitle}>
-            {searchQuery ? `Results for "${searchQuery}"` : "Popular Recipes"}
+            {searchQuery ? `Resultados para "${searchQuery}"` : "Receitas Populares"}
           </Text>
           <Text style={searchStyles.resultsCount}>{recipes.length} found</Text>
         </View>
 
         {loading ? (
           <View style={searchStyles.loadingContainer}>
-            <LoadingSpinner message="Searching recipes..." size="small" />
+            <LoadingSpinner message="Buscando receitas..." size="small" />
           </View>
         ) : (
           <FlatList

@@ -30,7 +30,7 @@ const SignInScreen = () => {
 
   const handleSignIn = async () => {
     if (!email || !password) {
-      Alert.alert("Error", "Please fill in all fields");
+      Alert.alert("Erro", "Por favor, preencha todos os campos");
       return;
     }
 
@@ -77,7 +77,7 @@ const SignInScreen = () => {
             />
           </View>
 
-          <Text style={authStyles.title}>Welcome Back</Text>
+          <Text style={authStyles.title}>Bem-vindo de volta</Text>
 
           {/* FORM CONTAINER */}
           <View style={authStyles.formContainer}>
@@ -85,7 +85,7 @@ const SignInScreen = () => {
             <View style={authStyles.inputContainer}>
               <TextInput
                 style={authStyles.textInput}
-                placeholder="Enter email"
+                placeholder="Digite seu e-mail"
                 placeholderTextColor={COLORS.textLight}
                 value={email}
                 onChangeText={setEmail}
@@ -98,7 +98,7 @@ const SignInScreen = () => {
             <View style={authStyles.inputContainer}>
               <TextInput
                 style={authStyles.textInput}
-                placeholder="Enter password"
+                placeholder="Digite sua senha"
                 placeholderTextColor={COLORS.textLight}
                 value={password}
                 onChangeText={setPassword}
@@ -123,7 +123,7 @@ const SignInScreen = () => {
               disabled={loading}
               activeOpacity={0.8}
             >
-              <Text style={authStyles.buttonText}>{loading ? "Signing In..." : "Sign In"}</Text>
+              <Text style={authStyles.buttonText}>{loading ? "Entrando..." : "Entrar"}</Text>
             </TouchableOpacity>
 
             {/* Sign Up Link */}
@@ -132,7 +132,7 @@ const SignInScreen = () => {
               onPress={() => router.push("/(auth)/sign-up")}
             >
               <Text style={authStyles.linkText}>
-                Don&apos;t have an account? <Text style={authStyles.link}>Sign up</Text>
+                Não tem uma conta? <Text style={authStyles.link}>Cadastre-se</Text>
               </Text>
             </TouchableOpacity>
           </View>
